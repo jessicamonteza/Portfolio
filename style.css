@@ -1,0 +1,352 @@
+/* Bas grejer */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eee5db;
+    color: #1C1B1A;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* NEW: so the nav links get Verdana too */
+}
+
+/* NEW: links no longer blue and underlined */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* NEW: accessibility, a clear outline when you tab through links with the keyboard */
+a:focus-visible {
+    outline: 3px solid #5459d3;
+    outline-offset: 3px;
+}
+
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 40px;
+    max-width: 580px;
+}
+
+li {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    line-height: 2;
+}
+
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 82px;
+    font-weight: 300;
+    max-width: 650px;
+}
+
+h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 40px;
+    font-weight: 300;
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    /* on small screens the links can move to a second line */
+    gap: 12px;
+    padding: 20px 40px;
+}
+
+.logo {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.9rem;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* CHANGED: ":not(.button)" means every link except buttons,
+   so the Resume button keeps its own hover */
+.nav-links a:not(.button):hover {
+    color: #7E1928;
+}
+
+/* intro box */
+.intro-box {
+    max-width: 400px;
+    padding-top: 40px;
+    /* bredden på både texten och knappen */
+}
+
+.intro-box p {
+    font-size: 16px;
+    /* mindre än dina andra stycken */
+    line-height: 1.4;
+    margin-bottom: 30px;
+    /* avstånd mellan texten och knappen */
+}
+
+/* Knappen fyller hela boxen, så den blir lika bred som texten */
+.intro-box .button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+}
+
+.intro-box #contact-message {
+    padding-top: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #413f3d;
+}
+
+/* Kontakta mig knapp JS*/
+.contact-button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    background: #131211;
+    color: #F5EEE6;
+    padding: 16px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+
+}
+
+#contact-message {
+    text-align: center;
+}
+
+#contact-message.sent {
+    color: #7E1928;
+}
+
+/* NEW: one class for the look of every button (Resume, Get in touch, and more later) */
+.button {
+    display: inline-block;
+    background: #131211;
+    color: #F5EEE6;
+    padding: 16px 70px;
+    border-radius: 6px;
+}
+
+.button:hover {
+    background: #7E1928;
+}
+
+/* NEW: extra class, only used where the button should be smaller (the nav) */
+.button-small {
+    padding: 8px 18px;
+}
+
+/* Intro */
+.intro {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 90px;
+}
+
+.intro-text {
+    flex: 1;
+    align-items: end;
+
+}
+
+.intro-img {
+    flex: 1;
+}
+
+
+.intro-img img {
+    width: 100%;
+    height: 640px;
+    /* CHANGED: was height: auto */
+    object-fit: cover;
+    /* NEW: crops the photo to fit instead of squashing it */
+    display: block;
+    border-radius: 0 8px 8px 0;
+    /* NEW: rounded on the right side only */
+}
+
+/* project/korten */
+.projects h2 {
+    padding-top: 60px;
+    padding-left: 30px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.card {
+    width: 400px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 20px;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+.card-content {
+    padding: 16px 0px;
+}
+
+.card-content h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.card-content p {
+    color: #413f3d;
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+/* About*/
+.about-me {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 0 40px;
+}
+
+.about-me img {
+    width: 30%;
+    border-radius: 6px;
+}
+
+.about-text p {
+    line-height: 1.3;
+
+}
+
+.about-text h2 {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+/* Read more JS */
+.toggle-button {
+    color: #363aa1;
+    font-size: 16px;
+    border-style: none;
+    cursor: pointer;
+    padding-bottom: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Footer*/
+.footer {
+    background-color: #1C1B1A;
+    display: flex;
+    padding: 40px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: end;
+}
+
+.footer p {
+    color: #eee5db;
+    margin: 10px;
+}
+
+.footer small {
+    color: #eee5db;
+}
+
+/* Surfplatta */
+@media (max-width: 900px) {
+    .intro {
+        flex-direction: column;
+        /* bilden ovanför texten */
+        align-items: stretch;
+        gap: 40px;
+    }
+
+    .intro-img,
+    .intro-text {
+        flex: none;
+    }
+
+    .intro-img img {
+        height: 400px;
+        border-radius: 0;
+    }
+
+    .intro-text {
+        padding: 0 20px;
+    }
+
+    .intro-box {
+        padding-left: 0;
+    }
+
+    h1 {
+        font-size: 56px;
+    }
+
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .skills {
+        flex-direction: column;
+        /* kolumnerna under varandra */
+        gap: 40px;
+    }
+}
+
+/* Mobil */
+@media (max-width: 600px) {
+    .nav {
+        padding: 20px;
+    }
+
+    .nav-links {
+        gap: 16px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    .projects,
+    .skills {
+        padding: 60px 20px;
+    }
+
+    .card-container {
+        grid-template-columns: 1fr;
+        /* ett kort per rad */
+    }
+}
