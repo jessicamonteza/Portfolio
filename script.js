@@ -43,7 +43,7 @@ toggleButton.addEventListener("click", function () {
 
         // DÖLJ
         moreText.classList.add("hidden");
-        toggleButton.textContent = "Read more ...";
+        toggleButton.textContent = "Read more about me ...";
         toggleButton.setAttribute("aria-expanded", "false");
 
     }
