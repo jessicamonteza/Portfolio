@@ -1,3 +1,23 @@
+/* =====================================================
+   INNEHÅLL
+   1. Bas (reset, body, länkar)
+   2. Typografi (p, li, h1, h2)
+   3. Knappar (gemensamma knappar + kontaktknapp)
+   4. Navigation (nav, logo, länkar)
+   5. Intro-sektionen (text, bild, intro-box, kontaktmeddelande)
+   6. Projekt-sektionen (kort)
+   7. About-sektionen (om mig + läs mer-knapp)
+   8. Footer
+   9. Responsivt (surfplatta + mobil)
+
+  Rader med "← SIDOMARGINAL" styr luften till vänster/höger.
+   ===================================================== */
+
+
+/* =====================================================
+   1. BAS
+   ===================================================== */
+
 /* Bas grejer */
 * {
     margin: 0px;
@@ -6,13 +26,13 @@
 }
 
 body {
-    background-color: #eee5db;
-    color: #1C1B1A;
+    background-color: #F1EAE1;
+    color: #11100F;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     /* NEW: so the nav links get Verdana too */
 }
 
-/* NEW: links no longer blue and underlined */
+/* links no longer blue and underlined */
 a {
     color: inherit;
     text-decoration: none;
@@ -23,6 +43,19 @@ a:focus-visible {
     outline: 3px solid #5459d3;
     outline-offset: 3px;
 }
+
+/* Scroll behaviour*/
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 80px;
+}
+
+/* =====================================================
+   2. TYPOGRAFI
+   ===================================================== */
 
 p {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -40,26 +73,78 @@ li {
 
 h1 {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 82px;
+    font-size: 110px;
     font-weight: 300;
-    max-width: 650px;
 }
 
 h2 {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 40px;
-    font-weight: 300;
+    font-size: 70px;
+    font-weight: lighter;
 }
 
-/* Navigation */
+.red-word {
+    color: #821F24;
+}
+
+
+/* =====================================================
+   3. KNAPPAR
+   ===================================================== */
+
+/* --- Kontakta mig knapp JS --- */
+/* Kontakta mig knapp JS*/
+.contact-button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    background: #131211;
+    color: #F1EAE1;
+    padding: 16px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+
+}
+
+/* --- Gemensam knapp (Resume, Get in touch m.fl.) --- */
+/* NEW: one class for the look of every button (Resume, Get in touch, and more later) */
+.button {
+    display: inline-block;
+    background: #11100F;
+    color: #F5EEE6;
+    padding: 16px 70px;
+    border-radius: 6px;
+}
+
+.button:hover {
+    background: #7E1928;
+}
+
+/* NEW: extra class, only used where the button should be smaller (the nav) */
+.button-small {
+    padding: 8px 18px;
+}
+
+
+/* =====================================================
+   4. NAVIGATION
+   ===================================================== */
+
 .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    /* on small screens the links can move to a second line */
     gap: 12px;
     padding: 20px 40px;
+    background-color: #F1EAE1;
+    /* sticky top */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo {
@@ -79,50 +164,79 @@ h2 {
     color: #7E1928;
 }
 
+
+/* =====================================================
+   5. INTRO-SEKTIONEN
+   ===================================================== */
+
+/* --- Intro: layout (text + bild bredvid varandra) --- */
+/* Intro */
+.intro {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 60px 0px 120px 0px;
+
+}
+
+/* --- Intro: textdelen --- */
+.intro-text {
+    flex: 1;
+    align-items: end;
+    margin-left: 40px;
+    padding: 40px;
+}
+
+.intro h1 {
+    padding-bottom: 80px;
+}
+
+/* --- Intro: bilddelen --- */
+.intro-img {
+    flex: 1;
+}
+
+
+.intro-img img {
+    width: 100%;
+    height: 650px;
+    /* CHANGED: was height: auto */
+    object-fit: cover;
+    /* NEW: crops the photo to fit instead of squashing it */
+    display: block;
+    border-radius: 12px 0px 0px 12px;
+    /* NEW: rounded on the right side only */
+}
+
+/* --- Intro: intro-box (text + knapp under rubriken) --- */
 /* intro box */
 .intro-box {
-    max-width: 400px;
+    max-width: 700px;
     padding-top: 40px;
     /* bredden på både texten och knappen */
 }
 
 .intro-box p {
-    font-size: 16px;
-    /* mindre än dina andra stycken */
-    line-height: 1.4;
-    margin-bottom: 30px;
-    /* avstånd mellan texten och knappen */
+    font-size: 24px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    max-width: 800px;
 }
 
 /* Knappen fyller hela boxen, så den blir lika bred som texten */
 .intro-box .button {
-    display: block;
     width: 100%;
     text-align: center;
     font-size: 16px;
 }
 
+/* --- Intro: meddelande efter klick på kontaktknappen (JS) --- */
 .intro-box #contact-message {
     padding-top: 10px;
     text-align: center;
     font-size: 14px;
     color: #413f3d;
-}
-
-/* Kontakta mig knapp JS*/
-.contact-button {
-    display: block;
-    width: 100%;
-    text-align: center;
-    box-sizing: border-box;
-    background: #131211;
-    color: #F5EEE6;
-    padding: 16px 20px;
-    border-radius: 6px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-
 }
 
 #contact-message {
@@ -133,60 +247,34 @@ h2 {
     color: #7E1928;
 }
 
-/* NEW: one class for the look of every button (Resume, Get in touch, and more later) */
-.button {
-    display: inline-block;
-    background: #131211;
+
+/* =====================================================
+   6. PROJEKT-SEKTIONEN
+   ===================================================== */
+
+/* --- Projekt: rubrik --- */
+
+.projects {
+    background-color: #11100F;
     color: #F5EEE6;
-    padding: 16px 70px;
-    border-radius: 6px;
-}
-
-.button:hover {
-    background: #7E1928;
-}
-
-/* NEW: extra class, only used where the button should be smaller (the nav) */
-.button-small {
-    padding: 8px 18px;
-}
-
-/* Intro */
-.intro {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 90px;
-}
-
-.intro-text {
-    flex: 1;
-    align-items: end;
-
-}
-
-.intro-img {
-    flex: 1;
-}
-
-
-.intro-img img {
-    width: 100%;
-    height: 640px;
-    /* CHANGED: was height: auto */
-    object-fit: cover;
-    /* NEW: crops the photo to fit instead of squashing it */
-    display: block;
-    border-radius: 0 8px 8px 0;
-    /* NEW: rounded on the right side only */
+    padding: 120px 0px 120px 0px;
 }
 
 /* project/korten */
-.projects h2 {
-    padding-top: 60px;
-    padding-left: 30px;
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 40px 30px 40px;
+    align-items: center;
+    color: #F1EAE1;
 }
 
+.project-header p {
+    margin-bottom: 0;
+    max-width: 400px;
+}
+
+/* --- Projekt: container för korten --- */
 .card-container {
     display: flex;
     justify-content: center;
@@ -194,6 +282,7 @@ h2 {
     margin-top: 10px;
 }
 
+/* --- Projekt: själva kortet --- */
 .card {
     width: 400px;
     border-radius: 6px;
@@ -207,6 +296,7 @@ h2 {
     border-radius: 6px;
 }
 
+/* --- Projekt: text i kortet --- */
 .card-content {
     padding: 16px 0px;
 }
@@ -218,18 +308,25 @@ h2 {
 }
 
 .card-content p {
-    color: #413f3d;
+    color: #c7c3bd;
     margin-bottom: 8px;
-    line-height: 1.3;
+    line-height: 1.5;
 }
 
+
+/* =====================================================
+   7. ABOUT-SEKTIONEN
+   ===================================================== */
+
+/* --- About: layout (bild + text) --- */
 /* About*/
 .about-me {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 120px 0px 120px 0px;
     gap: 30px;
-    padding: 0 40px;
+
 }
 
 .about-me img {
@@ -237,20 +334,29 @@ h2 {
     border-radius: 6px;
 }
 
+/* --- About: texten --- */
 .about-text p {
     line-height: 1.3;
 
 }
 
 .about-text h2 {
-    padding-top: 60px;
     padding-bottom: 60px;
+    max-width: 700px;
 }
 
+.about-text p {
+    line-height: 1.8;
+    font-size: 24px;
+    max-width: 600px;
+}
+
+/* --- About: "Läs mer"-knapp (JS) --- */
 /* Read more JS */
 .toggle-button {
-    color: #363aa1;
-    font-size: 16px;
+    font-size: 24px;
+    color: #821F24;
+    background-color: #F1EAE1;
     border-style: none;
     cursor: pointer;
     padding-bottom: 20px;
@@ -260,15 +366,25 @@ h2 {
     display: none;
 }
 
+
+/* =====================================================
+   8. FOOTER
+   ===================================================== */
+
 /* Footer*/
 .footer {
-    background-color: #1C1B1A;
+    background-color: #11100F;
     display: flex;
     padding: 40px;
+    /* ← SIDOMARGINAL (40px) */
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: end;
+}
+
+.footer h3 {
+    color: #eee5db;
 }
 
 .footer p {
@@ -280,6 +396,12 @@ h2 {
     color: #eee5db;
 }
 
+
+/* =====================================================
+   9. RESPONSIVT (ska ligga sist i filen!)
+   ===================================================== */
+
+/* --- Surfplatta (max 900px) --- */
 /* Surfplatta */
 @media (max-width: 900px) {
     .intro {
@@ -301,6 +423,7 @@ h2 {
 
     .intro-text {
         padding: 0 20px;
+        /* ← SIDOMARGINAL (20px) */
     }
 
     .intro-box {
@@ -322,10 +445,12 @@ h2 {
     }
 }
 
+/* --- Mobil (max 600px) --- */
 /* Mobil */
 @media (max-width: 600px) {
     .nav {
         padding: 20px;
+        /* ← SIDOMARGINAL (20px) */
     }
 
     .nav-links {
@@ -343,6 +468,7 @@ h2 {
     .projects,
     .skills {
         padding: 60px 20px;
+        /* ← SIDOMARGINAL (20px) */
     }
 
     .card-container {
