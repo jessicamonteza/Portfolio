@@ -1,8 +1,6 @@
 const contactMessage = document.querySelector("#contact-message");
 const contactButton = document.querySelector("#contact-1");
 
-// Meddelandet som visas när sidan laddas
-contactMessage.textContent = "Welcome to my portfolio! Press button above to contact";
 
 // När man klickar på knappen byts meddelandet
 contactButton.addEventListener("click", function () {
@@ -10,12 +8,12 @@ contactButton.addEventListener("click", function () {
 
         // TILLBAKA
         contactMessage.classList.remove("sent");
-        contactMessage.textContent = "Welcome to my portfolio! Click button to contact";
+        contactMessage.textContent = "Click button to contact";
 
     } else {
         // VISA
         contactMessage.classList.add("sent");
-        contactMessage.textContent = "Yayyyy! i will get back to you neverrr";
+        contactMessage.textContent = "Great! i will get back to you neverrr";
     }
 
 });
