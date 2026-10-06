@@ -17,6 +17,11 @@
 /* =====================================================
    1. BAS
    ===================================================== */
+/* dark theme */
+body.dark {
+    background-color: #11100F;
+    color: #F1EAE1;
+}
 
 /* Bas grejer */
 * {
@@ -38,10 +43,12 @@ a {
     text-decoration: none;
 }
 
-/* NEW: accessibility, a clear outline when you tab through links with the keyboard */
-a:focus-visible {
-    outline: 3px solid #5459d3;
-    outline-offset: 3px;
+/* Accessibility*/
+a:focus-visible,
+button:focus-visible {
+    outline: 6px solid #ae42e0;
+    outline-offset: 4px;
+    border-radius: 6px;
 }
 
 /* Scroll behaviour*/
@@ -59,7 +66,7 @@ section {
 
 p {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.5;
     margin-bottom: 40px;
     max-width: 580px;
@@ -84,7 +91,7 @@ h2 {
 }
 
 .red-word {
-    color: #821F24;
+    color: #A92329;
 }
 
 
@@ -109,8 +116,11 @@ h2 {
 
 }
 
+.contact-button:hover {
+    background: #A92329;
+}
+
 /* --- Gemensam knapp (Resume, Get in touch m.fl.) --- */
-/* NEW: one class for the look of every button (Resume, Get in touch, and more later) */
 .button {
     display: inline-block;
     background: #11100F;
@@ -120,10 +130,10 @@ h2 {
 }
 
 .button:hover {
-    background: #7E1928;
+    background: #A92329;
 }
 
-/* NEW: extra class, only used where the button should be smaller (the nav) */
+/* Nav knappen */
 .button-small {
     padding: 8px 18px;
 }
@@ -158,10 +168,8 @@ h2 {
     gap: 30px;
 }
 
-/* CHANGED: ":not(.button)" means every link except buttons,
-   so the Resume button keeps its own hover */
 .nav-links a:not(.button):hover {
-    color: #7E1928;
+    color: #A92329;
 }
 
 
@@ -170,7 +178,6 @@ h2 {
    ===================================================== */
 
 /* --- Intro: layout (text + bild bredvid varandra) --- */
-/* Intro */
 .intro {
     position: relative;
     display: flex;
@@ -180,7 +187,6 @@ h2 {
 
 }
 
-/* --- Intro: textdelen --- */
 .intro-text {
     flex: 1;
     align-items: end;
@@ -189,10 +195,9 @@ h2 {
 }
 
 .intro h1 {
-    padding-bottom: 80px;
+    padding-bottom: 90px;
 }
 
-/* --- Intro: bilddelen --- */
 .intro-img {
     flex: 1;
 }
@@ -200,17 +205,13 @@ h2 {
 
 .intro-img img {
     width: 100%;
-    height: 650px;
-    /* CHANGED: was height: auto */
+    height: 850px;
     object-fit: cover;
-    /* NEW: crops the photo to fit instead of squashing it */
     display: block;
     border-radius: 12px 0px 0px 12px;
-    /* NEW: rounded on the right side only */
 }
 
-/* --- Intro: intro-box (text + knapp under rubriken) --- */
-/* intro box */
+/* intro-box */
 .intro-box {
     max-width: 700px;
     padding-top: 40px;
@@ -302,7 +303,7 @@ h2 {
 }
 
 .card-content h3 {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 700;
     margin-bottom: 8px;
 }
@@ -331,6 +332,9 @@ h2 {
 
 .about-me img {
     width: 30%;
+    height: 700px;
+    object-fit: cover;
+    display: block;
     border-radius: 6px;
 }
 
@@ -355,7 +359,7 @@ h2 {
 /* Read more JS */
 .toggle-button {
     font-size: 24px;
-    color: #821F24;
+    color: #A92329;
     background-color: #F1EAE1;
     border-style: none;
     cursor: pointer;
@@ -380,7 +384,11 @@ h2 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: end;
+    text-align: center;
+}
+
+.footer h2 {
+    color: #eee5db;
 }
 
 .footer h3 {
@@ -389,7 +397,6 @@ h2 {
 
 .footer p {
     color: #eee5db;
-    margin: 10px;
 }
 
 .footer small {
@@ -432,16 +439,6 @@ h2 {
 
     h1 {
         font-size: 56px;
-    }
-
-    .card-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .skills {
-        flex-direction: column;
-        /* kolumnerna under varandra */
-        gap: 40px;
     }
 }
 
