@@ -13,7 +13,13 @@
     <!-- navigation -->
     <header class="nav">
         <a class="logo" href="index.html">Jessica Monteza</a>
-        <nav class="nav-links" aria-label="Navigation menu">
+
+        <button class="menu-button" id="menu-button" type="button" aria-expanded="false" aria-controls="nav-links"
+            aria-label="Menu">
+            <span id="menu-icon" aria-hidden="true">☰</span>
+        </button>
+
+        <nav class="nav-links" id="nav-links" aria-label="Main">
             <a href="#projects">Projects</a>
             <a href="#about-me">About me</a>
             <a href="#contact">Contact</a>
@@ -26,7 +32,7 @@
         <!-- intro -->
         <section class="intro">
             <div class="intro-text">
-                <h1>Hii, Im <em>Jessi</i>!</h1>
+                <h1>Hii, Im <em>Jessi</em>!</h1>
 
                 <div class="intro-box">
                     <p>I'm a <em>multidisciplinary designer</em> focusing on <strong>UX/UI</strong>,
@@ -36,8 +42,7 @@
                         experiences
                         that feel clear and brands that feel like themselves.
                     </p>
-                    <button class="contact-button" id="contact-1" type="button">Get in touch</button>
-                    <p id="contact-message">Click button to contact</p>
+                    <a href="mailto:jessica.monteza1@gmail.com" class="contact-button">Get in touch</a>
                 </div>
             </div>
             <div class="intro-img">
@@ -106,13 +111,18 @@
                     how I see the world and how I design</p>
 
                 <div id="more-about" class="hidden">
-                    <p>I studied Digital Creative at Hyper Island and am currently studying UX Engineering at Chas
-                        Academy, building on my creative background with a stronger focus on how things work in
-                        practice. My process is research-led and iterative, balancing strategy with intuitive design.
+                    <p> I studied Digital Creative at Hyper Island and am currently
+                        studying UX Engineering at Chas Academy. This builds on my
+                        creative background with a stronger focus on how things work
+                        in practice. My process is research-led and iterative,
+                        balancing strategy with intuitive design.
                     </p>
-                    <p>Outside of work, you'll find me painting, baking, working with clay, or trying a new recipe. I
-                        have a deep love for animals, and my cat Billie often sneaks into my more playful projects.
-                    </p>
+                    <h3>Outside of work, you'll find me:</h3>
+                    <ul>
+                        <li>Creating things by hand, like painting or working with clay</li>
+                        <li>Trying new recipes or baking for friends & family</li>
+                        <li>Spending time with Billie</li>
+                    </ul>
                 </div>
                 <button class="toggle-button" id="toggle-about" type="button" aria-expanded="false"
                     aria-controls="more-about">Read more about me ...</button>
